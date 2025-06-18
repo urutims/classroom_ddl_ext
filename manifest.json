@@ -1,0 +1,42 @@
+{
+    "manifest_version": 3,
+    "name": "Classroom Drive Downloader",
+    "version": "1.1",
+    "description": "Ctrl + クリックでクラスルームから一発ダウンロード！",
+    "permissions": [
+        "downloads",
+        "webNavigation",
+        "scripting"
+    ],
+    "host_permissions": [
+        "https://classroom.google.com/*",
+        "https://drive.google.com/*"
+    ],
+    "action": {
+        "default_icon": {
+            "16": "icons/16.png",
+            "48": "icons/48.png",
+            "128": "icons/128.png"
+        },
+        "default_title": "⤓ DL links"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://classroom.google.com/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "icons": {
+        "16": "icons/16.png",
+        "48": "icons/48.png",
+        "128": "icons/128.png"
+    }
+}
