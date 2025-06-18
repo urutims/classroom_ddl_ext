@@ -1,0 +1,2 @@
+# classroom_ddl_ext
+Classroomの資料を一発でダウンロードするための拡張機能です。
